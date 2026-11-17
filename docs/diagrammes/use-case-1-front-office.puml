@@ -1,0 +1,60 @@
+@startuml use-case-1-front-office
+' SmartCampus AI — Cas d'utilisation (1/2) : front-office visiteur et candidat (SA-33)
+' Disposition : acteurs humains à gauche, acteurs système à droite, un bloc par acteur
+' → aucune flèche ne traverse un autre bloc (pas de croisement).
+left to right direction
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam usecaseBackgroundColor #F5F7FF
+skinparam usecaseBorderColor #3B5BDB
+skinparam ArrowColor #444444
+
+actor "Visiteur" as V
+actor "Candidat" as C
+V <|-- C
+
+rectangle "SmartCampus AI — Front-office" {
+  package "Sans compte (P1)" {
+    usecase "Consulter les formations" as UC1
+    usecase "Discuter avec le chatbot\n(FR / tunisien / Arabizi)" as UC2
+    usecase "Envoyer un message vocal" as UC2a
+    usecase "Obtenir une orientation\njustifiée (shortlist)" as UC2b
+    usecase "Créer un compte" as UC3
+  }
+  package "Candidat identifié (P2 à P5)" {
+    usecase "Gérer son dossier\nde préinscription" as UC4
+    usecase "Donner son consentement" as UC4b
+    usecase "Déposer des pièces\njustificatives" as UC4a
+    usecase "Passer le QCM" as UC5
+    usecase "Gérer ses rendez-vous" as UC6
+    usecase "Suivre sa candidature" as UC7
+    usecase "Demander une équivalence" as UC8
+  }
+}
+
+actor "Agent IA" as IA <<système>>
+actor "Service email" as MAIL <<système>>
+
+V --> UC1
+V --> UC2
+V --> UC3
+UC2a .> UC2 : <<extend>>
+UC2b .> UC2 : <<extend>>
+
+C --> UC4
+C --> UC5
+C --> UC6
+C --> UC7
+C --> UC8
+UC4 .> UC4b : <<include>>
+UC4 .> UC4a : <<include>>
+
+UC2 --> IA
+UC5 --> IA
+UC6 --> MAIL
+
+note bottom of C
+  Tous les cas « Candidat identifié »
+  exigent l'authentification (JWT).
+end note
+@enduml

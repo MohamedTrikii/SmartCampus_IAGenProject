@@ -1,0 +1,71 @@
+@startuml use-case-2-back-office
+' SmartCampus AI — Cas d'utilisation (2/2) : back-office responsables, direction, administration (SA-33)
+' Disposition : un bloc par acteur, acteurs système à droite → aucune flèche ne se croise.
+left to right direction
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam usecaseBackgroundColor #F5F7FF
+skinparam usecaseBorderColor #3B5BDB
+skinparam ArrowColor #444444
+
+actor "Responsable" as R
+actor "Resp. académique\nIIT / ISB" as RA
+actor "Resp. entretien" as RE
+actor "Direction" as D
+actor "Administrateur" as AD
+R <|-- RA
+R <|-- RE
+
+rectangle "SmartCampus AI — Back-office" {
+  package "Responsable académique" {
+    usecase "Consulter un dossier candidat" as UC0
+    usecase "Traiter les préinscriptions" as UC9
+    usecase "Valider / ajuster une\nrecommandation de l'IA" as UC9a
+    usecase "Traiter les équivalences" as UC10
+    usecase "Corriger les formations\nde son établissement" as UC11
+  }
+  package "Responsable entretien" {
+    usecase "Publier ses disponibilités" as UC12
+    usecase "Confirmer / reporter un RDV" as UC12b
+    usecase "Mener l'entretien\net saisir la décision" as UC13
+  }
+  package "Direction" {
+    usecase "Consulter statistiques\net tunnel de conversion" as UC14
+    usecase "Consulter le journal\nde synchronisation" as UC14b
+  }
+  package "Administration" {
+    usecase "Gérer comptes et rôles" as UC15
+    usecase "Lancer la synchronisation\ndu catalogue" as UC16
+    usecase "Gérer le corpus RAG\net les agents IA" as UC17
+  }
+  package "Automatique (P6)" {
+    usecase "Envoyer rappels et relances" as UC18
+    usecase "Transférer à un conseiller /\nmarquer abandonné" as UC19
+  }
+}
+
+actor "Temps" as T <<système>>
+actor "Agent IA" as IA <<système>>
+
+RA --> UC0
+RA --> UC9
+RA --> UC10
+RA --> UC11
+UC9a .> UC9 : <<extend>>
+RE --> UC12
+RE --> UC12b
+RE --> UC13
+D --> UC14
+D --> UC14b
+AD --> UC15
+AD --> UC16
+AD --> UC17
+UC18 <-- T
+UC19 <-- T
+UC18 --> IA
+
+note bottom of AD
+  Tous les cas du back-office
+  exigent l'authentification (JWT + rôle).
+end note
+@enduml
