@@ -1,0 +1,58 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: smartcampus
+      POSTGRES_PASSWORD: smartcampus
+      POSTGRES_DB: smartcampus
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U smartcampus"]
+      interval: 5s
+      retries: 10
+
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+    volumes: [ollama:/root/.ollama]
+    # GPU NVIDIA : décommentez
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices: [{ driver: nvidia, count: all, capabilities: [gpu] }]
+
+  backend:
+    build: ./backend
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://smartcampus:smartcampus@db:5432/smartcampus
+      LLM_BASE_URL: http://ollama:11434/v1
+    ports: ["8000:8000"]
+    volumes:
+      - ./data:/data:ro   # catalogue officiel lu par scripts/seed.py
+    depends_on:
+      db: { condition: service_healthy }
+
+  # Synchronisation automatique du catalogue depuis iit.tn, isb.tn, isa.tn, 2i2s.tn, nau.tn
+  scheduler:
+    build: ./backend
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://smartcampus:smartcampus@db:5432/smartcampus
+      LLM_BASE_URL: http://ollama:11434/v1
+    command: ["python", "-m", "scripts.scheduler"]
+    depends_on:
+      backend: { condition: service_started }
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000/api/v1
+    ports: ["3000:3000"]
+    depends_on: [backend]
+
+volumes:
+  pgdata:
+  ollama:
