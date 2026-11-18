@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /prive/
+Sitemap: https://iit.tn/wp-sitemap.xml
