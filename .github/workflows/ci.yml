@@ -1,0 +1,85 @@
+name: CI
+
+# La CI n'appelle jamais les vrais sites ni un vrai LLM : les tests de synchronisation utilisent les pages
+# de backend/tests/fixtures/sites et le LLM est simulé (LLM_PROVIDER=fake).
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: backend (pytest)
+    runs-on: ubuntu-latest
+    env:
+      LLM_PROVIDER: fake
+      JWT_SECRET: ci-only-secret
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - run: pip install -r requirements.txt
+      - run: pytest
+      - name: Banc d'évaluation LLM (mode fake)
+        run: python ../llm-eval/evaluate.py --models fake
+
+  migrations:
+    name: migrations (PostgreSQL + pgvector)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: smartcampus
+          POSTGRES_PASSWORD: smartcampus
+          POSTGRES_DB: smartcampus
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U smartcampus" --health-interval 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql+psycopg://smartcampus:smartcampus@localhost:5432/smartcampus
+      JWT_SECRET: ci-only-secret
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - run: pip install -r requirements.txt
+      - name: upgrade / downgrade / upgrade
+        run: alembic upgrade head && alembic downgrade base && alembic upgrade head
+      - name: le modèle et les migrations sont alignés
+        run: alembic check
+      - name: seed (admin + corrections manuelles du catalogue)
+        run: python -m scripts.seed && python -m scripts.seed
+
+  frontend:
+    name: frontend (build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run build
