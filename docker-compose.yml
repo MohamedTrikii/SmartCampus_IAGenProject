@@ -17,11 +17,7 @@ services:
     image: ollama/ollama:latest
     ports: ["11434:11434"]
     volumes: [ollama:/root/.ollama]
-    # GPU NVIDIA : décommentez
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices: [{ driver: nvidia, count: all, capabilities: [gpu] }]
+    # GPU NVIDIA : ajouter -f docker-compose.gpu.yml (voir ce fichier)
 
   backend:
     build: ./backend

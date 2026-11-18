@@ -34,3 +34,33 @@
 {"id": "Q34", "language": "arabizi", "intent": "orientation_perso", "question": "mouch 9wi fel math ama n7eb el web wel design, chnowa ynesbni ?"}
 {"id": "Q35", "language": "arabizi", "intent": "info_programme", "question": "el licence 9adeh men 3am w najjem nkammel ba3dha ingénieur ?"}
 {"id": "Q36", "language": "arabizi", "intent": "comparaison", "question": "IIT walla ISB khir bech nekhdem fel data ?"}
+{"id": "Q37", "language": "fr", "intent": "info_programme", "question": "slt c quoi exactement la licence big data a liit ?? on fait bcp de maths ?"}
+{"id": "Q38", "language": "fr", "intent": "conditions_acces", "question": "jai un bac eco gestion est ce que je peux m'inscrire en licence info ou c réservé aux bac math"}
+{"id": "Q39", "language": "fr", "intent": "frais", "question": "combien ca coute par an la prepa integree svp, et yaura des frais d'inscription en plus ?"}
+{"id": "Q40", "language": "fr", "intent": "comparaison", "question": "genie civil ou genie meca, lequel a le plus de debouchés en tunisie et a l'etranger ?"}
+{"id": "Q41", "language": "fr", "intent": "orientation_perso", "question": "j'ai eu 12.5 au bac sciences, j'aime la bio et l'informatique, vous me conseillez quoi ?"}
+{"id": "Q42", "language": "fr", "intent": "preinscription", "question": "comment faire la preinscription en ligne ? faut deposer quels papiers ?"}
+{"id": "Q43", "language": "fr", "intent": "rendez_vous", "question": "est ce que je peux decaler mon entretien de jeudi à la semaine prochaine ?"}
+{"id": "Q44", "language": "fr", "intent": "salutation", "question": "bonsoir, merci pour les infos !"}
+{"id": "Q45", "language": "fr", "intent": "hors_sujet", "question": "tu connais un bon resto pas cher a sfax centre ?"}
+{"id": "Q46", "language": "fr", "intent": "info_programme", "question": "les cours en licence cybersécurité c en francais ou en anglais ? y a des stages ?"}
+{"id": "Q47", "language": "tn", "intent": "info_programme", "question": "شنوة نقراو في licence réseaux et cybersécurité ؟"}
+{"id": "Q48", "language": "tn", "intent": "conditions_acces", "question": "عندي باك تقني، نجم ندخل للبريبا ولا لازمني باك رياضيات ؟"}
+{"id": "Q49", "language": "tn", "intent": "frais", "question": "قداش المعاليم متاع الهندسة في العام ؟ وفما تخفيض ؟"}
+{"id": "Q50", "language": "tn", "intent": "comparaison", "question": "شنية خير، نقرا licence ولا نعدي البريبا و ندخل الهندسة ؟"}
+{"id": "Q51", "language": "tn", "intent": "orientation_perso", "question": "نحب البرمجة برشا اما ضعيف شوية في الماط، شنوة تنصحني نختار ؟"}
+{"id": "Q52", "language": "tn", "intent": "preinscription", "question": "كيفاش نعمل التسجيل الأولي ؟ لازم نجي للمدرسة ولا أونلاين ؟"}
+{"id": "Q53", "language": "tn", "intent": "rendez_vous", "question": "نحب ناخذ rendez-vous باش نحكي مع مسؤول، وقتاش فما بلايص ؟"}
+{"id": "Q54", "language": "tn", "intent": "salutation", "question": "عسلامة، يعطيك الصحة على المساعدة"}
+{"id": "Q55", "language": "tn", "intent": "hors_sujet", "question": "شكون ربح الماتش متاع البارح ؟"}
+{"id": "Q56", "language": "tn", "intent": "comparaison", "question": "الفرق بين génie informatique و licence génie logiciel شنوة ؟"}
+{"id": "Q57", "language": "arabizi", "intent": "info_programme", "question": "chnowa el modules fi licence big data ? fama deep learning ?"}
+{"id": "Q58", "language": "arabizi", "intent": "conditions_acces", "question": "3andi bac eco, najem nod5el licence info wala le ?"}
+{"id": "Q59", "language": "arabizi", "intent": "frais", "question": "9adech ta5ou el iit fel 3am lel licence ? w fama facilité de paiement ?"}
+{"id": "Q60", "language": "arabizi", "intent": "comparaison", "question": "prepa wala licence directement, chnowa a7sen lel 5edma ba3d ?"}
+{"id": "Q61", "language": "arabizi", "intent": "orientation_perso", "question": "ena n7eb el electronique w el robots, chnowa el formation eli tsla7li ?"}
+{"id": "Q62", "language": "arabizi", "intent": "preinscription", "question": "kifech na3mel inscription ? chnowa el wra9 eli lazmin ?"}
+{"id": "Q63", "language": "arabizi", "intent": "rendez_vous", "question": "n7eb n2a5er rdv mte3i, mane9derch nji nhar el 5mis"}
+{"id": "Q64", "language": "arabizi", "intent": "salutation", "question": "aslema, ya3tik sa7a 3al ma3loumet"}
+{"id": "Q65", "language": "arabizi", "intent": "hors_sujet", "question": "chkoun ya3ref ki tet7al el plage fi sfax ?"}
+{"id": "Q66", "language": "arabizi", "intent": "orientation_perso", "question": "jebt 11 fel bac math, mch metfahem ken najem na3mel genie wala le, chnowa ra2yek ?"}
