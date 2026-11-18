@@ -56,6 +56,24 @@ def session_id(client):
     return client.post("/api/v1/sessions").json()["session_id"]
 
 
+ADMIN = ("admin@smartcampus.local", "Admin123!")  # compte de démo créé par scripts/seed.py
+
+
+def register(client, email, password="motdepasse1", full_name="Utilisateur Test", headers=None):
+    r = client.post("/api/v1/auth/register", json={"email": email, "password": password, "full_name": full_name},
+                    headers=headers or {})
+    assert r.status_code == 201, r.text
+    return r.json()
+
+
+def user_with_role(client, email, role):
+    """Crée un compte puis lui donne un rôle via l'API admin ; renvoie l'en-tête Authorization."""
+    user = register(client, email)
+    r = client.patch(f"/api/v1/users/{user['id']}/role", json={"role": role}, headers=login(client, *ADMIN))
+    assert r.status_code == 200, r.text
+    return login(client, email, "motdepasse1")
+
+
 def login(client, email, password):
     r = client.post("/api/v1/auth/login", data={"username": email, "password": password})
     return {"Authorization": f"Bearer {r.json()['access_token']}"}
