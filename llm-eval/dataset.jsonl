@@ -1,0 +1,36 @@
+{"id": "Q01", "language": "fr", "intent": "comparaison", "question": "Quelle est la différence entre la prépa et la licence à l'IIT ?"}
+{"id": "Q02", "language": "fr", "intent": "conditions_acces", "question": "Quelles sont les conditions d'accès au cycle ingénieur ?"}
+{"id": "Q03", "language": "fr", "intent": "frais", "question": "Combien coûte l'inscription en licence informatique ?"}
+{"id": "Q04", "language": "fr", "intent": "orientation_perso", "question": "J'ai un bac maths avec 13 de moyenne et j'aime la programmation, que me conseillez-vous ?"}
+{"id": "Q05", "language": "fr", "intent": "info_programme", "question": "Quels sont les débouchés après le cycle ingénieur génie informatique ?"}
+{"id": "Q06", "language": "fr", "intent": "preinscription", "question": "Je voudrais me préinscrire, comment faire ?"}
+{"id": "Q07", "language": "fr", "intent": "rendez_vous", "question": "Est-ce que je peux avoir un rendez-vous pour un entretien la semaine prochaine ?"}
+{"id": "Q08", "language": "fr", "intent": "info_programme", "question": "La licence dure combien d'années et on peut continuer en ingénierie après ?"}
+{"id": "Q09", "language": "fr", "intent": "salutation", "question": "Bonjour !"}
+{"id": "Q10", "language": "fr", "intent": "hors_sujet", "question": "Tu peux me donner la recette du couscous ?"}
+{"id": "Q11", "language": "fr", "intent": "orientation_perso", "question": "Je ne suis pas très fort en maths mais j'aime le design et le web, quel parcours ?"}
+{"id": "Q12", "language": "fr", "intent": "comparaison", "question": "Vaut-il mieux faire une formation à l'IIT ou à l'ISB pour travailler dans la data ?"}
+{"id": "Q13", "language": "tn", "intent": "comparaison", "question": "شنوة الفرق بين البريبا و الليسانس في IIT؟"}
+{"id": "Q14", "language": "tn", "intent": "conditions_acces", "question": "شنوة لازمني باش نقرا إنجنيور؟"}
+{"id": "Q15", "language": "tn", "intent": "frais", "question": "قداش يخلص الواحد في العام في الليسانس؟"}
+{"id": "Q16", "language": "tn", "intent": "orientation_perso", "question": "عندي باك ماط و نحب البرمجة برشا، شنوة تنصحني نقرا؟"}
+{"id": "Q17", "language": "tn", "intent": "info_programme", "question": "كي نكمل إنجنيور إنفو وين نجم نخدم؟"}
+{"id": "Q18", "language": "tn", "intent": "preinscription", "question": "نحب نعمل préinscription، كيفاش؟"}
+{"id": "Q19", "language": "tn", "intent": "rendez_vous", "question": "نجم ناخو موعد للـ entretien؟"}
+{"id": "Q20", "language": "tn", "intent": "salutation", "question": "عسلامة، لاباس؟"}
+{"id": "Q21", "language": "tn", "intent": "hors_sujet", "question": "شكون ربح الماتش البارح؟"}
+{"id": "Q22", "language": "tn", "intent": "orientation_perso", "question": "موش قوي في الماط أما نحب الويب و الديزاين، شنوة يناسبني؟"}
+{"id": "Q23", "language": "tn", "intent": "info_programme", "question": "الليسانس قداش من عام و نجم نكمل بعدها إنجنيور؟"}
+{"id": "Q24", "language": "tn", "intent": "comparaison", "question": "IIT ولا ISB خير باش نخدم في الداتا؟"}
+{"id": "Q25", "language": "arabizi", "intent": "comparaison", "question": "chnowa el far9 bin el prepa w el licence fel IIT ?"}
+{"id": "Q26", "language": "arabizi", "intent": "conditions_acces", "question": "chnowa lezmni bech na9ra ingénieur ?"}
+{"id": "Q27", "language": "arabizi", "intent": "frais", "question": "9adeh ykhalles el wa7ed fel 3am fel licence ?"}
+{"id": "Q28", "language": "arabizi", "intent": "orientation_perso", "question": "3andi bac math w n7eb el programmation barcha, chnowa tnasa7ni ?"}
+{"id": "Q29", "language": "arabizi", "intent": "info_programme", "question": "ki nkammel ingénieur info win najjem nekhdem ?"}
+{"id": "Q30", "language": "arabizi", "intent": "preinscription", "question": "n7eb na3mel préinscription, kifech ?"}
+{"id": "Q31", "language": "arabizi", "intent": "rendez_vous", "question": "najjem nekhou rendez-vous lel entretien jem3a jeya ?"}
+{"id": "Q32", "language": "arabizi", "intent": "salutation", "question": "3aslema, labes ?"}
+{"id": "Q33", "language": "arabizi", "intent": "hors_sujet", "question": "chkoun reb7 el match lbare7 ?"}
+{"id": "Q34", "language": "arabizi", "intent": "orientation_perso", "question": "mouch 9wi fel math ama n7eb el web wel design, chnowa ynesbni ?"}
+{"id": "Q35", "language": "arabizi", "intent": "info_programme", "question": "el licence 9adeh men 3am w najjem nkammel ba3dha ingénieur ?"}
+{"id": "Q36", "language": "arabizi", "intent": "comparaison", "question": "IIT walla ISB khir bech nekhdem fel data ?"}
