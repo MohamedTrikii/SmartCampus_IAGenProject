@@ -121,11 +121,11 @@ if ($Fake) {
         Set-EnvValue "LLM_PROVIDER" "openai"
         Set-EnvValue "LLM_MODEL" $target
         Set-EnvValue "LLM_TIMEOUT_S" "600"  # sur CPU, une réponse peut prendre plusieurs minutes
-        Write-Ok "LLM réel : $target (via Ollama). Sans GPU, comptez 1 à 5 minutes par réponse."
+        Write-Ok "LLM réel : $target (via Ollama). Sur CPU : quelques secondes avec un modèle 3B, plusieurs minutes avec un 7B ou plus."
     } else {
         Set-EnvValue "LLM_PROVIDER" "fake"
         Write-Warn "Modèle '$target' non installé : LLM simulé utilisé pour cette démo."
-        Write-Warn "Pour un vrai modèle : .\demarrer.ps1 -Modele gemma2:2b"
+        Write-Warn "Pour un vrai modèle : .\demarrer.ps1 -Modele qwen2.5:3b"
     }
 }
 

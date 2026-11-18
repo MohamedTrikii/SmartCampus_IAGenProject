@@ -49,7 +49,7 @@ puis ouvre http://localhost:3000.
 |---|---|
 | `demarrer.bat` | LLM réel si le modèle de `.env` est installé dans Ollama, sinon LLM simulé |
 | `demarrer.bat -Fake` | LLM simulé : réponses instantanées, pour montrer l'interface |
-| `demarrer.bat -Modele gemma2:2b` | LLM réel avec ce modèle (téléchargé si absent ; sans GPU : 1 à 5 min par réponse) |
+| `demarrer.bat -Modele qwen2.5:3b` | LLM réel avec ce modèle (téléchargé si absent ; sur CPU : ~7 s par réponse en 3B, plusieurs minutes en 7B) |
 | `demarrer.bat -Gpu` | GPU NVIDIA pour Ollama (`docker-compose.gpu.yml`) |
 | `demarrer.bat -Synchro` | relance la synchronisation du catalogue depuis les sites officiels |
 | `demarrer.bat -Arreter` | arrête les services (données conservées) |
