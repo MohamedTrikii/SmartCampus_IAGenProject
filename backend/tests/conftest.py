@@ -65,3 +65,43 @@ def login(client, email, password):
 def db(client):  # `client` crée le schéma et les données de référence
     with TestingSession() as session:
         yield session
+
+
+# --- fixtures des workflows métier (tests/test_workflow.py) ---
+@pytest.fixture()
+def candidate(db):
+    from app.core.security import hash_password
+    from app.db.models import User, UserRole
+
+    user = User(email="candidat@test.tn", password_hash=hash_password("motdepasse1"),
+                full_name="Candidat Test", role=UserRole.candidate)
+    db.add(user)
+    db.flush()
+    return user
+
+
+@pytest.fixture()
+def application(db, candidate):
+    from sqlalchemy import select
+
+    from app.db.models import Program
+    from app.db.models_workflow import Application
+    from app.domain.workflow import make_reference
+
+    program = db.scalar(select(Program).where(Program.code == "IIT-LIC-INFO"))
+    app_ = Application(reference=make_reference("PRE", 1, 2026), candidate_id=candidate.id, program_id=program.id)
+    db.add(app_)
+    db.flush()
+    return app_
+
+
+@pytest.fixture()
+def equivalence(db, candidate):
+    from app.db.models_workflow import EquivalenceRequest
+    from app.domain.workflow import make_reference
+
+    req = EquivalenceRequest(reference=make_reference("EQV", 1, 2026), candidate_id=candidate.id,
+                             previous_institution="Université X", previous_diploma="Licence")
+    db.add(req)
+    db.flush()
+    return req
