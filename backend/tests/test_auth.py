@@ -122,3 +122,8 @@ def test_anonymous_visitor_cannot_access_protected_routes(client, session_id, me
         {"json": {}} if method in ("post", "put", "patch") else {}
     ))
     assert r.status_code == 401
+
+
+def test_password_longer_than_bcrypt_limit_is_rejected(client):
+    r = client.post(f"{API}/auth/register", json={"email": "long@test.tn", "password": "a" * 73, "full_name": "Long"})
+    assert r.status_code == 422 and r.json()["code"] == "VALIDATION_ERROR"

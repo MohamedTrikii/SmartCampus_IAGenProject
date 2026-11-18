@@ -20,7 +20,8 @@ class SessionOut(ORM):
 
 class RegisterIn(BaseModel):
     email: EmailStr
-    password: str = Field(min_length=8)
+    # bcrypt ne prend en compte que 72 octets : au-delà, deux mots de passe différents seraient acceptés
+    password: str = Field(min_length=8, max_length=72)
     full_name: str = Field(min_length=2, max_length=150)
 
 
