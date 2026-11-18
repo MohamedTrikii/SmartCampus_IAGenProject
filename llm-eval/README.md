@@ -40,6 +40,21 @@ quantification Q4 demande environ 6 à 8 Go. Sans GPU, une API compatible OpenAI
 Le sujet demande aussi d'**adapter au moins un modèle** (LoRA/QLoRA) au tunisien et à l'Arabizi. Ce banc de test sert
 de baseline : on relancera exactement le même script sur le modèle fine-tuné pour mesurer le gain.
 
+## Où lancer l'évaluation : PC local ou Kaggle / Colab ?
+
+| Option | Matériel | Modèles réalistes | Quand l'utiliser |
+|---|---|---|---|
+| PC local (ex. RTX 3050 4 Go, 16 Go RAM) | GPU 4 Go via `docker-compose.gpu.yml` | 2–3B entièrement sur GPU (`qwen2.5:3b`, `llama3.2:3b`, `gemma2:2b`) ; 7B possible mais en partie sur CPU, donc lent | développement, démo, petit banc |
+| **Kaggle** (recommandé pour SA-31) | GPU T4 16 Go, ~30 h/semaine gratuites | 7–9B (`qwen2.5:7b-instruct`, `llama3.1:8b`, `gemma2:9b`, `aya-expanse:8b`) | comparaison sérieuse des modèles, plus tard fine-tuning LoRA |
+| Colab gratuit | GPU T4, sessions plus courtes et interruptibles | idem Kaggle | dépannage |
+
+Notebook prêt à l'emploi : `llm-eval/kaggle_colab_eval.ipynb` (installe Ollama sur le GPU du notebook et lance **le même**
+`evaluate.py` sur le même `dataset.jsonl`). Les latences dépendent de la machine : toujours préciser le GPU dans
+`docs/choix-llm.md`, et ne comparer entre eux que des modèles évalués sur la même machine.
+
+L'application (chat) reste sur Ollama local, ou sur une API compatible OpenAI en changeant seulement
+`LLM_BASE_URL` / `LLM_API_KEY` / `LLM_MODEL` dans `.env`.
+
 ## Lancer
 
 ```bash

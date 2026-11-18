@@ -39,7 +39,20 @@ Contraintes matérielles de l'équipe : [GPU disponible ? RAM des machines ? Col
 
 ## 4. Résultats
 
-Coller ici `llm-eval/results/summary.md` :
+### 4.0 Mesure préliminaire sur poste local (18/11/2026)
+
+Seule mesure réelle à ce jour. Ce n'est **pas** le banc complet : elle sert à choisir la machine d'évaluation.
+
+| Machine | Modèle | Exécution | Question | Latence | Langue de la réponse |
+|---|---|---|---|---|---|
+| PC portable, RTX 3050 4 Go, 16 Go RAM (7,6 Go alloués à Docker) | `gemma2:2b` (Ollama 0.40, Docker) | CPU (GPU non initialisé dans le conteneur) | « chnowa el far9 bin prepa w licence ? » + contexte officiel (24 formations) | 264 s | français (question en Arabizi) |
+
+Conclusion : le banc complet (66 questions × 2 appels × 3–4 modèles) n'est pas réalisable sur ce poste ;
+il est lancé sur un GPU T4 Kaggle avec `llm-eval/kaggle_colab_eval.ipynb`.
+
+### 4.1 Banc complet (à remplir après l'exécution Kaggle)
+
+Machine : [GPU]. Coller ici `llm-eval/results/summary.md` :
 
 | model | score | intent_acc | intent_fr | intent_tn | intent_arabizi | langid_acc | lang_consistency | lang_exact | fee_hallucination | latency_mean_s | latency_p95_s | errors |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
