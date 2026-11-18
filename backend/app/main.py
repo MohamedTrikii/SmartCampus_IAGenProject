@@ -1,3 +1,5 @@
+import logging
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -6,6 +8,13 @@ from app.core.config import settings
 from app.core.errors import install_error_handlers
 
 API_PREFIX = "/api/v1"
+
+if settings.jwt_secret in ("change-me-in-production", "remplacez-par-une-longue-chaine-aleatoire") or len(
+    settings.jwt_secret
+) < 32:
+    logging.getLogger("smartcampus").warning(
+        "JWT_SECRET absent ou trop court : définissez une chaîne aléatoire d'au moins 32 caractères dans .env"
+    )
 
 app = FastAPI(
     title=settings.app_name,
