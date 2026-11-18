@@ -1,5 +1,5 @@
 {
-  "_instructions": "Corrections MANUELLES du catalogue. Le catalogue est rempli et mis à jour AUTOMATIQUEMENT depuis les sites officiels (python -m scripts.sync_sites). N'ajoutez ici une formation que pour corriger ou compléter une information absente des sites : une formation présente dans ce fichier est verrouillée (data_source=manual) et la synchronisation ne l'écrase plus. Chaque formation doit avoir une source_url ; aucune valeur inventée. Noms et villes des établissements : uniquement ce qui est lu sur les sites officiels ; sinon TODO explicite.",
+  "_instructions": "Corrections MANUELLES du catalogue. Le catalogue est rempli et mis à jour AUTOMATIQUEMENT depuis les sites officiels (python -m scripts.sync_sites). N'ajoutez ici une formation que pour corriger ou compléter une information absente des sites : une formation présente dans ce fichier est verrouillée (data_source=manual) et la synchronisation ne l'écrase plus. Chaque formation doit avoir une source_url ; aucune valeur inventée. Noms des établissements : lus sur iit.tn, 2i2s.tn et nau.tn (page d'accueil du groupe NAU, qui liste IIT, ISB et ISA). Villes : uniquement si lues sur le site, sinon null.",
   "academic_year": "2026-2027",
   "institutions": [
     {
@@ -10,13 +10,13 @@
     },
     {
       "code": "ISB",
-      "name": "ISB (TODO : nom officiel à confirmer, site protégé contre les robots)",
+      "name": "International School of Business",
       "city": null,
       "website": "https://isb.tn/"
     },
     {
       "code": "ISA",
-      "name": "ISA (TODO : nom officiel complet à confirmer)",
+      "name": "IIT Section of Architecture",
       "city": "Sfax",
       "website": "https://isa.tn/"
     },
@@ -28,7 +28,7 @@
     },
     {
       "code": "NAU",
-      "name": "NAU (TODO : nom officiel à confirmer)",
+      "name": "North American Private University",
       "city": null,
       "website": "https://nau.tn/"
     }
