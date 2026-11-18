@@ -45,10 +45,13 @@ Seule mesure réelle à ce jour. Ce n'est **pas** le banc complet : elle sert à
 
 | Machine | Modèle | Exécution | Question | Latence | Langue de la réponse |
 |---|---|---|---|---|---|
-| PC portable, RTX 3050 4 Go, 16 Go RAM (7,6 Go alloués à Docker) | `gemma2:2b` (Ollama 0.40, Docker) | CPU (GPU non initialisé dans le conteneur) | « chnowa el far9 bin prepa w licence ? » + contexte officiel (24 formations) | 264 s | français (question en Arabizi) |
+| PC portable, RTX 3050 4 Go, 16 Go RAM (7,6 Go alloués à Docker) | `gemma2:2b` (Ollama 0.40, Docker) | CPU (GPU non initialisé dans le conteneur) | « chnowa el far9 bin prepa w licence ? » + contexte officiel (24 formations) | 264 s (1er chargement du modèle compris) | français (question en Arabizi) |
+| même poste, CPU (`ollama ps` : 100 % CPU) | `qwen2.5:3b` | backend complet (prompt système + contexte officiel) | « Quelle est la différence entre la Prépa et la Licence ? » | 7 s | français ✓ — contenu imprécis : présente la Prépa comme une préparation à la Licence |
+| même poste, CPU | `qwen2.5:3b` | idem, 2ᵉ tour | « chnowa el far9 bin prepa w licence ? » | 8 s | mélange Arabizi / français (« El far9 bin prépa est un cycle… ») |
 
-Conclusion : le banc complet (66 questions × 2 appels × 3–4 modèles) n'est pas réalisable sur ce poste ;
-il est lancé sur un GPU T4 Kaggle avec `llm-eval/kaggle_colab_eval.ipynb`.
+Conclusion : un modèle 3B répond en quelques secondes sur ce poste (utilisable pour le développement et la démo),
+mais la qualité en Arabizi et l'exactitude sont insuffisantes sur ces deux exemples. Les modèles 7–9B sont évalués
+sur un GPU T4 Kaggle avec `llm-eval/kaggle_colab_eval.ipynb`.
 
 ### 4.1 Banc complet (à remplir après l'exécution Kaggle)
 
