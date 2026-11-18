@@ -2,6 +2,9 @@ import os
 
 os.environ["DATABASE_URL"] = "sqlite+pysqlite:///:memory:"
 os.environ["LLM_PROVIDER"] = "fake"
+os.environ["ADMIN_EMAIL"] = "admin@smartcampus.local"
+os.environ["ADMIN_PASSWORD"] = "Admin123!"
+os.environ["SYNC_REQUEST_DELAY_S"] = "0"
 
 import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402

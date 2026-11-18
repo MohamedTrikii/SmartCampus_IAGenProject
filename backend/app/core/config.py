@@ -5,11 +5,15 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=(".env", "../.env"), extra="ignore")
 
     app_name: str = "SmartCampus AI"
-    database_url: str = "postgresql+psycopg://smartcampus:smartcampus@localhost:5432/smartcampus"
+    database_url: str = "postgresql+psycopg://smartcampus:smartcampus@localhost:5433/smartcampus"
 
     jwt_secret: str = "change-me-in-production"
     jwt_algorithm: str = "HS256"
     access_token_minutes: int = 60
+
+    # compte administrateur créé par scripts/seed.py (valeurs de démo : à changer hors poste de dev)
+    admin_email: str = "admin@smartcampus.local"
+    admin_password: str = "Admin123!"
 
     visitor_session_days: int = 7
     chat_history_window: int = 12  # nombre de messages renvoyés au LLM (mémoire courte)

@@ -1,0 +1,37 @@
+{
+  "_instructions": "Corrections MANUELLES du catalogue. Le catalogue est rempli et mis à jour AUTOMATIQUEMENT depuis les sites officiels (python -m scripts.sync_sites). N'ajoutez ici une formation que pour corriger ou compléter une information absente des sites : une formation présente dans ce fichier est verrouillée (data_source=manual) et la synchronisation ne l'écrase plus. Chaque formation doit avoir une source_url ; aucune valeur inventée. Noms et villes des établissements : uniquement ce qui est lu sur les sites officiels ; sinon TODO explicite.",
+  "academic_year": "2026-2027",
+  "institutions": [
+    {
+      "code": "IIT",
+      "name": "Institut International de Technologie",
+      "city": "Sfax",
+      "website": "https://iit.tn/"
+    },
+    {
+      "code": "ISB",
+      "name": "ISB (TODO : nom officiel à confirmer, site protégé contre les robots)",
+      "city": null,
+      "website": "https://isb.tn/"
+    },
+    {
+      "code": "ISA",
+      "name": "ISA (TODO : nom officiel complet à confirmer)",
+      "city": "Sfax",
+      "website": "https://isa.tn/"
+    },
+    {
+      "code": "2I2S",
+      "name": "2I2S — École Internationale des Sciences de Santé",
+      "city": null,
+      "website": "https://2i2s.tn/"
+    },
+    {
+      "code": "NAU",
+      "name": "NAU (TODO : nom officiel à confirmer)",
+      "city": null,
+      "website": "https://nau.tn/"
+    }
+  ],
+  "programs": []
+}
