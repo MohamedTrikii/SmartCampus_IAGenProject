@@ -15,7 +15,9 @@ automatiquement depuis les sites officiels, sessions anonymes, authentification 
 
 ```
 smartcampus-ai/
+├── demarrer.bat / .ps1    # lancement en un clic (Windows)
 ├── docker-compose.yml     # db (PostgreSQL 16 + pgvector), ollama, backend, scheduler, frontend
+├── docker-compose.gpu.yml # option GPU NVIDIA pour Ollama
 ├── .env.example           # variables d'environnement commentées (copier en .env)
 ├── data/
 │   └── catalogue.json     # corrections MANUELLES du catalogue (verrouillées), monté en lecture seule
@@ -37,14 +39,31 @@ smartcampus-ai/
 └── .github/               # CI GitHub Actions, modèle de Pull Request
 ```
 
-## Démarrage rapide
+## Lancer le projet en un clic (Windows)
+
+Double-cliquer sur **`demarrer.bat`** (ou `.\demarrer.ps1` dans PowerShell). Le script démarre Docker Desktop si
+besoin, crée `.env`, construit et lance les 5 services, attend le backend, synchronise le catalogue s'il est vide,
+puis ouvre http://localhost:3000.
+
+| Commande | Effet |
+|---|---|
+| `demarrer.bat` | LLM réel si le modèle de `.env` est installé dans Ollama, sinon LLM simulé |
+| `demarrer.bat -Fake` | LLM simulé : réponses instantanées, pour montrer l'interface |
+| `demarrer.bat -Modele gemma2:2b` | LLM réel avec ce modèle (téléchargé si absent ; sans GPU : 1 à 5 min par réponse) |
+| `demarrer.bat -Gpu` | GPU NVIDIA pour Ollama (`docker-compose.gpu.yml`) |
+| `demarrer.bat -Synchro` | relance la synchronisation du catalogue depuis les sites officiels |
+| `demarrer.bat -Arreter` | arrête les services (données conservées) |
+
+Compte admin de démo pour Swagger (http://localhost:8000/docs) : `ADMIN_EMAIL` / `ADMIN_PASSWORD` de `.env`.
+
+## Démarrage rapide (développement, sans le script)
 
 Prérequis : Docker Desktop, Python 3.11+, Node 20+.
 
 ```bash
 cp .env.example .env                       # puis changer JWT_SECRET
-docker compose up -d db ollama
-docker compose exec ollama ollama pull qwen2.5:7b-instruct
+docker compose up -d db ollama              # PostgreSQL publié sur le port 5433 du poste
+docker compose exec ollama ollama pull qwen2.5:3b
 
 cd backend
 python -m venv .venv && source .venv/bin/activate   # Windows : .venv\Scripts\activate
