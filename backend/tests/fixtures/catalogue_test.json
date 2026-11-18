@@ -1,0 +1,105 @@
+{
+  "_instructions": "Fichier rempli À LA MAIN par l'équipe à partir des sources officielles IIT / ISB. Chaque formation doit avoir une source_url. Les frais ne sont saisis que s'ils viennent d'une source officielle (is_official: true). Les formations dont le nom contient (EXEMPLE) sont des données de démonstration à remplacer. Import : cd backend && python -m scripts.import_catalogue ../data/catalogue.json",
+  "academic_year": "2026-2027",
+  "institutions": [
+    {
+      "code": "IIT",
+      "name": "Institut International de Technologie",
+      "city": "Sfax",
+      "website": null
+    },
+    {
+      "code": "ISB",
+      "name": "ISB (TODO : nom officiel complet)",
+      "city": "Sfax",
+      "website": null
+    }
+  ],
+  "programs": [
+    {
+      "code": "IIT-PREPA",
+      "institution_code": "IIT",
+      "level": "prepa",
+      "name": "Cycle préparatoire intégré (EXEMPLE)",
+      "specialization": null,
+      "duration_years": 2,
+      "language": "Français",
+      "description": "TODO : description officielle (brochure).",
+      "career_outcomes": [],
+      "bridges": [
+        "IIT-ING-GI"
+      ],
+      "source_url": null,
+      "requirements": [
+        {
+          "bac_sections": [
+            "Mathématiques",
+            "Sciences expérimentales",
+            "Technique",
+            "Informatique"
+          ],
+          "min_average": null,
+          "required_diploma": null,
+          "notes": "TODO : vérifier les sections et conditions officielles"
+        }
+      ],
+      "fees": []
+    },
+    {
+      "code": "IIT-LIC-INFO",
+      "institution_code": "IIT",
+      "level": "licence",
+      "name": "Licence en informatique (EXEMPLE)",
+      "specialization": null,
+      "duration_years": 3,
+      "language": "Français",
+      "description": "TODO : description officielle (brochure).",
+      "career_outcomes": [
+        "Développeur",
+        "Administrateur systèmes"
+      ],
+      "bridges": [
+        "IIT-ING-GI"
+      ],
+      "source_url": null,
+      "requirements": [
+        {
+          "bac_sections": [
+            "Mathématiques",
+            "Informatique",
+            "Sciences expérimentales"
+          ],
+          "min_average": null,
+          "required_diploma": null,
+          "notes": "TODO : vérifier les sections et conditions officielles"
+        }
+      ],
+      "fees": []
+    },
+    {
+      "code": "IIT-ING-GI",
+      "institution_code": "IIT",
+      "level": "ingenieur",
+      "name": "Cycle ingénieur Génie Informatique (EXEMPLE)",
+      "specialization": "Génie Logiciel et Systèmes Décisionnels",
+      "duration_years": 3,
+      "language": "Français",
+      "description": "TODO : description officielle (brochure).",
+      "career_outcomes": [
+        "Ingénieur logiciel",
+        "Ingénieur data / BI"
+      ],
+      "bridges": [],
+      "source_url": null,
+      "requirements": [
+        {
+          "bac_sections": [],
+          "min_average": null,
+          "required_diploma": "TODO : Prépa intégrée / Licence / concours (à préciser)",
+          "notes": "TODO : conditions officielles d'accès"
+        }
+      ],
+      "fees": []
+    }
+  ]
+}
