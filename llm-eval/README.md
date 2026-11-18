@@ -23,22 +23,23 @@
 4. **Décision** : modèle retenu = meilleur score global, sans être sous 60 % d'`intent_acc` en Arabizi.
    Le résultat va dans le rapport et la présentation (partie « Résultats & validation »).
 
-## Modèles candidats proposés (open-source, via Ollama)
+## Modèles candidats (open-source, gratuits, via Ollama)
 
-| Modèle | Tag Ollama | Pourquoi le tester |
+Liste complète et à jour dans `kaggle_colab_eval.ipynb` (cellule 4). Un tag absent de la bibliothèque Ollama est
+signalé puis sauté.
+
+| Taille | Modèles (tags Ollama) | Pourquoi |
 |---|---|---|
-| Qwen2.5 7B Instruct | `qwen2.5:7b-instruct` | très bon multilingue / arabe à cette taille |
-| Llama 3.1 8B Instruct | `llama3.1:8b` | référence open-source, base courante pour LoRA |
-| Gemma 2 9B | `gemma2:9b` | bon en français |
-| Aya Expanse 8B | `aya-expanse:8b` | modèle conçu pour le multilingue, dont l'arabe |
-| Mistral NeMo 12B | `mistral-nemo` | bon en français, plus lourd |
+| ≤ 4B | `qwen2.5:3b`, `llama3.2:3b`, `gemma2:2b`, `phi3.5:3.8b`, `qwen3:4b`, `gemma3:4b` | tournent sur un PC sans gros GPU (`qwen2.5:3b` : ~7 s/réponse sur CPU i7) |
+| 7–9B | `qwen2.5:7b-instruct`, `qwen3:8b`, `llama3.1:8b`, `mistral:7b`, `aya-expanse:8b`, `command-r7b-arabic:7b`, `gemma2:9b` | candidats principaux ; Aya et Command R7B Arabic sont conçus pour l'arabe ; tous adaptables en LoRA |
+| 12B | `mistral-nemo:12b`, `gemma3:12b` | limite haute d'un GPU T4 16 Go |
 
-Vérifiez la disponibilité des tags (`ollama pull <tag>`) et la RAM/VRAM de vos machines : un 7–9B en
-quantification Q4 demande environ 6 à 8 Go. Sans GPU, une API compatible OpenAI (Groq, OpenRouter...) peut servir à
-évaluer des modèles plus gros : il suffit de changer `LLM_BASE_URL`, `LLM_API_KEY` et le nom du modèle.
+Exclus volontairement : **GPT-2** (pas conversationnel, ne suit pas d'instructions, presque uniquement anglais,
+contexte de 1 024 tokens : notre prompt n'y tient pas), les modèles *base* non instruits, et les modèles de
+raisonnement (`deepseek-r1`) dont les balises `<think>` cassent la sortie JSON.
 
-Le sujet demande aussi d'**adapter au moins un modèle** (LoRA/QLoRA) au tunisien et à l'Arabizi. Ce banc de test sert
-de baseline : on relancera exactement le même script sur le modèle fine-tuné pour mesurer le gain.
+Le sujet demande d'**adapter au moins un modèle** (LoRA/QLoRA) au tunisien et à l'Arabizi : ce banc sert de baseline,
+on relancera le même script sur le modèle adapté pour mesurer le gain.
 
 ## Où lancer l'évaluation : PC local ou Kaggle / Colab ?
 
@@ -48,8 +49,9 @@ de baseline : on relancera exactement le même script sur le modèle fine-tuné 
 | **Kaggle** (recommandé pour SA-31) | GPU T4 16 Go, ~30 h/semaine gratuites | 7–9B (`qwen2.5:7b-instruct`, `llama3.1:8b`, `gemma2:9b`, `aya-expanse:8b`) | comparaison sérieuse des modèles, plus tard fine-tuning LoRA |
 | Colab gratuit | GPU T4, sessions plus courtes et interruptibles | idem Kaggle | dépannage |
 
-Notebook prêt à l'emploi : `llm-eval/kaggle_colab_eval.ipynb` (installe Ollama sur le GPU du notebook et lance **le même**
-`evaluate.py` sur le même `dataset.jsonl`). Les latences dépendent de la machine : toujours préciser le GPU dans
+Notebook prêt à l'emploi : `llm-eval/kaggle_colab_eval.ipynb`. Il installe Ollama sur le GPU du notebook puis, pour chaque
+modèle : téléchargement → **même** `evaluate.py` sur le **même** `dataset.jsonl` → suppression du modèle (le disque ne se
+remplit pas). Reprise automatique si la session coupe (`--skip-done`), tableau final avec `--summary-only`. Les latences dépendent de la machine : toujours préciser le GPU dans
 `docs/choix-llm.md`, et ne comparer entre eux que des modèles évalués sur la même machine.
 
 L'application (chat) reste sur Ollama local, ou sur une API compatible OpenAI en changeant seulement

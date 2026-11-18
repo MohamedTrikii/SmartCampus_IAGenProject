@@ -11,6 +11,9 @@ Pour chaque modèle et chaque question du jeu (FR / tunisien en arabe / Arabizi)
 Usage :
   python evaluate.py --models qwen2.5:7b-instruct llama3.1:8b gemma2:9b
   python evaluate.py --models fake            # test du script sans LLM
+  python evaluate.py --models mistral:7b --skip-done --machine "Kaggle T4"   # un modèle à la fois, reprise possible
+  python evaluate.py --summary-only           # reconstruit summary.md à partir des résultats déjà présents
+Chaque modèle écrit results/<modele>_summary.json ; summary.md regroupe tous les modèles du dossier.
 Variables : LLM_BASE_URL (défaut Ollama http://localhost:11434/v1), LLM_API_KEY.
 """
 import argparse
@@ -145,32 +148,19 @@ def score(s: dict) -> float:
                  + 0.15 * (100 - s["fee_hallucination"]) + 0.10 * speed, 1)
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--models", nargs="+", required=True)
-    parser.add_argument("--dataset", default=str(ROOT / "dataset.jsonl"))
-    parser.add_argument("--base-url", default=os.getenv("LLM_BASE_URL", "http://localhost:11434/v1"))
-    parser.add_argument("--api-key", default=os.getenv("LLM_API_KEY", "ollama"))
-    args = parser.parse_args()
+def safe_name(model: str) -> str:
+    return re.sub(r"[^\w.-]", "_", model)
 
-    if hasattr(sys.stdout, "reconfigure"):
-        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    items = [json.loads(line) for line in open(args.dataset, encoding="utf-8") if line.strip()]
-    out_dir = ROOT / "results"
-    out_dir.mkdir(exist_ok=True)
 
-    summaries = []
-    for model in args.models:
-        print(f"\n=== {model} ({len(items)} questions) ===")
-        s = evaluate(model, items, args.base_url, args.api_key, out_dir)
-        s["score"] = score(s)
-        summaries.append(s)
+def write_report(out_dir: Path) -> str:
+    """summary.md : tous les modèles évalués dans ce dossier, triés par score."""
+    summaries = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(out_dir.glob("*_summary.json"))]
     summaries.sort(key=lambda s: s["score"], reverse=True)
-
     cols = ["model", "score", "intent_acc", "intent_fr", "intent_tn", "intent_arabizi", "langid_acc",
-            "lang_consistency", "lang_exact", "fee_hallucination", "latency_mean_s", "latency_p95_s", "errors"]
+            "lang_consistency", "lang_exact", "fee_hallucination", "latency_mean_s", "latency_p95_s", "errors",
+            "machine"]
     lines = ["| " + " | ".join(cols) + " |", "|" + "---|" * len(cols)]
-    lines += ["| " + " | ".join(str(s[c]) for c in cols) + " |" for s in summaries]
+    lines += ["| " + " | ".join(str(s.get(c, "")) for c in cols) + " |" for s in summaries]
     report = "# Résultats de l'évaluation LLM\n\n" + "\n".join(lines) + (
         "\n\nMétriques en %, sauf latences (secondes). `fee_hallucination` : part des questions sur les frais où le "
         "modèle a inventé un montant (plus bas = mieux). `lang_consistency` : réponse en français pour une question "
@@ -178,7 +168,42 @@ def main() -> None:
         "`errors` : appels échoués.\nCompléter avec la notation humaine (fichiers *_notation_humaine.csv).\n"
     )
     (out_dir / "summary.md").write_text(report, encoding="utf-8")
-    print("\n" + report)
+    return report
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--models", nargs="+", default=[])
+    parser.add_argument("--dataset", default=str(ROOT / "dataset.jsonl"))
+    parser.add_argument("--base-url", default=os.getenv("LLM_BASE_URL", "http://localhost:11434/v1"))
+    parser.add_argument("--api-key", default=os.getenv("LLM_API_KEY", "ollama"))
+    parser.add_argument("--out-dir", default=str(ROOT / "results"))
+    parser.add_argument("--machine", default="", help="machine utilisée (les latences en dépendent)")
+    parser.add_argument("--skip-done", action="store_true", help="ne réévalue pas un modèle déjà présent")
+    parser.add_argument("--summary-only", action="store_true", help="reconstruit summary.md sans appeler de modèle")
+    args = parser.parse_args()
+    if not args.models and not args.summary_only:
+        parser.error("--models est obligatoire (sauf avec --summary-only)")
+
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    items = [json.loads(line) for line in open(args.dataset, encoding="utf-8") if line.strip()]
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    for model in [] if args.summary_only else args.models:
+        summary_path = out_dir / f"{safe_name(model)}_summary.json"
+        if args.skip_done and summary_path.exists():
+            print(f"\n=== {model} : déjà évalué, ignoré (--skip-done) ===")
+            continue
+        print(f"\n=== {model} ({len(items)} questions) ===")
+        s = evaluate(model, items, args.base_url, args.api_key, out_dir)
+        s["score"] = score(s)
+        s["machine"] = args.machine
+        s["questions"] = len(items)
+        summary_path.write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    print("\n" + write_report(out_dir))
 
 
 if __name__ == "__main__":
