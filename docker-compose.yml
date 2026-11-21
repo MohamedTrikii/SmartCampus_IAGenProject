@@ -1,6 +1,7 @@
 services:
   db:
     image: pgvector/pgvector:pg16
+    stop_grace_period: 30s   # laisse PostgreSQL fermer la base proprement à l'arrêt
     environment:
       POSTGRES_USER: smartcampus
       POSTGRES_PASSWORD: smartcampus
@@ -21,6 +22,7 @@ services:
 
   backend:
     build: ./backend
+    init: true   # arrêt propre et rapide (transmet le signal d'arrêt à Python)
     env_file: .env
     environment:
       DATABASE_URL: postgresql+psycopg://smartcampus:smartcampus@db:5432/smartcampus
@@ -34,6 +36,7 @@ services:
   # Synchronisation automatique du catalogue depuis iit.tn, isb.tn, isa.tn, 2i2s.tn, nau.tn
   scheduler:
     build: ./backend
+    init: true
     env_file: .env
     environment:
       DATABASE_URL: postgresql+psycopg://smartcampus:smartcampus@db:5432/smartcampus

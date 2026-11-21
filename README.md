@@ -16,6 +16,7 @@ automatiquement depuis les sites officiels, sessions anonymes, authentification 
 ```
 smartcampus-ai/
 ├── demarrer.bat / .ps1    # lancement en un clic (Windows)
+├── arreter.bat / .ps1     # arrêt en un clic (Windows)
 ├── docker-compose.yml     # db (PostgreSQL 16 + pgvector), ollama, backend, scheduler, frontend
 ├── docker-compose.gpu.yml # option GPU NVIDIA pour Ollama
 ├── .env.example           # variables d'environnement commentées (copier en .env)
@@ -53,6 +54,9 @@ puis ouvre http://localhost:3000.
 | `demarrer.bat -Gpu` | GPU NVIDIA pour Ollama (`docker-compose.gpu.yml`) |
 | `demarrer.bat -Synchro` | relance la synchronisation du catalogue depuis les sites officiels |
 | `demarrer.bat -Arreter` | arrête les services (données conservées) |
+| **`arreter.bat`** | arrête tous les services (données conservées) — même effet que `demarrer.bat -Arreter` |
+| `arreter.bat -Supprimer` | arrête et supprime les conteneurs pour libérer la mémoire (données conservées) |
+| `arreter.bat -Docker` | arrête aussi Docker Desktop (libère toute la mémoire du PC) |
 
 Compte admin de démo pour Swagger (http://localhost:8000/docs) : `ADMIN_EMAIL` / `ADMIN_PASSWORD` de `.env`.
 
