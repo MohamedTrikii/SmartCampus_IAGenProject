@@ -1,4 +1,4 @@
-# SmartCampus AI — contexte projet
+# Contribuer à SmartCampus AI — contexte et règles du projet
 
 Projet N°3 IA générative, IIT Sfax 2026-2027, Team 03 (4 membres). Chatbot agentique d'orientation
 universitaire (IIT : Licence, Prépa, Ingénierie ; ISB) en français, dialecte tunisien et Arabizi,
@@ -29,7 +29,7 @@ Dépôt : https://github.com/MohamedTrikii/SmartCampus_IAGenProject
   on améliore l'extracteur (avec un test sur une page HTML réelle), on ne saisit pas les formations à la main.
 - Chaque fonctionnalité a des tests pytest. Lancer `cd backend && pytest` avant de dire « terminé ».
 - Messages de commit : `SA-xx: description`. Une branche par ticket : `feature/SA-xx-nom`, PR vers develop.
-- Répondre en français. Rester cohérent avec le style du code existant.
+- Documentation, messages et commentaires en français. Rester cohérent avec le style du code existant.
 
 ## Commandes
 - DB + LLM : `docker compose up -d db ollama`
