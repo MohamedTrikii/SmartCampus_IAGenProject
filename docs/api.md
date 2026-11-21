@@ -1,4 +1,4 @@
-# Contrat API v1 — SmartCampus AI (SA-2)
+# Contrat API v1 — SmartCampus AI (SA-5)
 
 Base URL : `http://localhost:8000/api/v1` — documentation interactive : `http://localhost:8000/docs`
 (bouton **Authorize** : email dans `username`, mot de passe dans `password`).

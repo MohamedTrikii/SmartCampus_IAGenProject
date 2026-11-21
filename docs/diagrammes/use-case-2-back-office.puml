@@ -1,5 +1,5 @@
 @startuml use-case-2-back-office
-' SmartCampus AI — Cas d'utilisation (2/2) : back-office responsables, direction, administration (SA-33)
+' SmartCampus AI — Cas d'utilisation (2/2) : back-office responsables, direction, administration (SA-3)
 ' Disposition : un bloc par acteur, acteurs système à droite → aucune flèche ne se croise.
 left to right direction
 skinparam actorStyle awesome

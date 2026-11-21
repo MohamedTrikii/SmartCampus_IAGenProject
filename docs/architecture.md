@@ -1,4 +1,4 @@
-# Architecture technique — SmartCampus AI (SA-2)
+# Architecture technique — SmartCampus AI (SA-4)
 
 SmartCampus AI est un chatbot **agentique** d'orientation universitaire pour l'IIT (Licence, Prépa, Ingénierie),
 l'ISB et les établissements partenaires (ISA, 2I2S, NAU). Il dialogue en **français, dialecte tunisien et

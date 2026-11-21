@@ -1,5 +1,5 @@
 @startuml use-case-1-front-office
-' SmartCampus AI — Cas d'utilisation (1/2) : front-office visiteur et candidat (SA-33)
+' SmartCampus AI — Cas d'utilisation (1/2) : front-office visiteur et candidat (SA-3)
 ' Disposition : acteurs humains à gauche, acteurs système à droite, un bloc par acteur
 ' → aucune flèche ne traverse un autre bloc (pas de croisement).
 left to right direction

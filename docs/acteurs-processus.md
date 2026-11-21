@@ -1,4 +1,4 @@
-# Acteurs et processus métier — SmartCampus AI (SA-33)
+# Acteurs et processus métier — SmartCampus AI (SA-3)
 
 Version corrigée et complétée de « Définition des processus métier » (Team 03).
 Les règles de transition sont implémentées et testées dans `backend/app/domain/workflow.py`.
