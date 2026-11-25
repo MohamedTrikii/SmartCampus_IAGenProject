@@ -1,0 +1,86 @@
+﻿id;langue;question;reponse;pertinence_1_5;naturel_langue_1_5;commentaire
+Q01;fr;Quelle est la différence entre la prépa et la licence à l'IIT ?;La prépa à l'IIT est un parcours de 2 ans qui te permet d'acquérir les bases solides en mathématiques et en sciences pour l'ingénieur. En revanche, la licence dure 3 ans et te permet d'approfondir les sujets de prépa tout en te familiarisant avec les méthodes de recherche et de travail en équipe. Tu peux aussi choisir d'aller directement en master après la licence.;;;
+Q02;fr;Quelles sont les conditions d'accès au cycle ingénieur ?;Les conditions d'accès au cycle ingénieur Génie Informatique à l'IIT sont généralement basées sur le classement au BAC et la note en mathématiques. Pour plus de détails, je te suggère de contacter directement le service des admissions.;;;
+Q03;fr;Combien coûte l'inscription en licence informatique ?;L'inscription en licence informatique au IIT n'a pas de frais indiqués dans le contexte officiel. Je vous recommande de vérifier auprès de l'administration de l'IIT pour obtenir la dernière information.;;;
+Q04;fr;J'ai un bac maths avec 13 de moyenne et j'aime la programmation, que me conseillez-vous ?;Chnowa, avec ta moyenne de 13 en maths, tu peux te diriger vers le [IIT] Cycle préparatoire intégré. C'est un bon choix pour te préparer à l'ingénieur Génie Informatique. Tu peux aussi envisager la Licence en informatique, mais avec une moyenne plus élevée. Quels sont tes intérêts en programmation spécifiques ?;;;
+Q05;fr;Quels sont les débouchés après le cycle ingénieur génie informatique ?;Le cycle ingénieur génie informatique te permet d'accéder à diverses carrières en informatique, en technologie et en ingénierie. Tu peux devenir ingénieur logiciel, développeur web, ingénieur en sécurité informatique, ou encore ingénieur en intelligence artificielle. Les débouchés sont nombreux et variés.;;;
+Q06;fr;Je voudrais me préinscrire, comment faire ?;Chnowa, pour te préinscrire chez l'IIT, tu dois d'abord vérifier si tu as les conditions requises pour l'entrée dans le cycle préparatoire intégré (prépa). Si c'est le cas, tu peux te rendre directement sur le site officiel de l'IIT pour remplir le formulaire de préinscription. Ne rate pas la date limite de préinscription, elle est souvent annoncée sur leur site. Après avoir rempli le formulaire, tu devras présenter tes documents et passer les entretiens d'admission. Si tu es accepté, tu peux finaliser ton inscription et débuter ta formation.;;;
+Q07;fr;Est-ce que je peux avoir un rendez-vous pour un entretien la semaine prochaine ?;"chnowa, je comprends que tu souhaites obtenir des informations. Pour mieux te conseiller, il faudrait que je sache un peu plus sur toi. 
+
+- Quelle est ta section au bac ?
+- Quelles sont tes matières préférées ?
+- Quel est ton objectif professionnel ?
+- Quelles sont tes contraintes ?
+
+Après avoir ces informations, je pourrai te donner des orientations plus précises.";;;
+Q08;fr;La licence dure combien d'années et on peut continuer en ingénierie après ?;La licence dure 3 ans. Après la licence, il est possible de poursuivre en ingénierie, mais cela dépendra des options de formations proposées par l'IIT ou ses partenaires. Tu peux me donner plus d'informations sur tes intérêts et objectifs pour mieux t'aider ?;;;
+Q09;fr;Bonjour !;Chnowa ! 3lech ou 3la 3la ? Quel parcours souhaites-tu discuter ?;;;
+Q10;fr;Tu peux me donner la recette du couscous ?;;;;
+Q11;fr;Je ne suis pas très fort en maths mais j'aime le design et le web, quel parcours ?;Chnowa, tu peux te diriger vers le Cycle Préparatoire Intégré à l'IIT pour te préparer aux études d'informatique. Tu pourras ensuite choisir entre la Licence en Informatique ou le Cycle Ingénieur Génie Informatique. Les deux options te permettront de travailler sur le design et le web.;;;
+Q12;fr;Vaut-il mieux faire une formation à l'IIT ou à l'ISB pour travailler dans la data ?;3lech, chnowa tekt 3la 3la 3la? 3la 3la 3la 3la 3la 3la?;;;
+Q13;tn;شنوة الفرق بين البريبا و الليسانس في IIT؟;بريبا في IIT هي سنة تمهيدية لمن يرغب في الالتحاق بالليسانس، بينما الليسانس هي مرحلة دراسية تدوم 3 سنوات تهدف إلى الحصول على شهادة الليسانس في مجال الهندسة. بريبا تهدف إلى تزويد الطلاب بالمهارات الأساسية والخبرات اللازمة لمواكبة الليسانس، بينما الليسانس هو مرحلة تخصصية تقدم دراسات متعمقة في مجال الهندسة.;;;
+Q14;tn;شنوة لازمني باش نقرا إنجنيور؟;شغوف بالبرمجة وعلوم الحاسوب؟ هل تفضلين تعرفين أكثر عن مسار الإنجينيور في IIT؟;;;
+Q15;tn;قداش يخلص الواحد في العام في الليسانس؟;الليسانس في IIT ي lasted 3 سنوات فقط. كيف يمكنني مساعدتك اليوم؟;;;
+Q16;tn;عندي باك ماط و نحب البرمجة برشا، شنوة تنصحني نقرا؟;شنهك بترشب البرمجة، نصيحتي هي تختار بين الليسانس في المعلوماتية أو الدبلوم في جيني إينفورماتيكس، حسب ميولك وشغفك. لو كان عندك وقت إضافي، الليسانس ستمنحك فرصة أكبر للتطور في مجال البرمجة وتطوير البرمجيات. لو كان عندك وقت محدود، الدبلوم ستكون الخيار الأفضل. شنو تختار؟;;;
+Q17;tn;كي نكمل إنجنيور إنفو وين نجم نخدم؟;هاد المسار يخدم ناس تانية في مجال إنفو، خاصة في التطبيقات والبرمجة وتصميم الأنظمة. هل تفضلين معرفة مزيد عن المسار وكيفية اختياره؟;;;
+Q18;tn;نحب نعمل préinscription، كيفاش؟;Chnowa, on peut commencer. Quel est ton niveau scolaire actuel ?;;;
+Q19;tn;نجم ناخو موعد للـ entretien؟;chnowa, m'der entretien kon nekkess. Mo toufek nakhawen kifayet.;;;
+Q20;tn;عسلامة، لاباس؟;عساك也好，有什麼我可以幫你的？;;;
+Q21;tn;شكون ربح الماتش البارح؟;بما أننا في مناظرة، هل تعلم ما هي المباريات القادمة في كرة القدم؟ أو ربما تود معرفة النتائج؟;;;
+Q22;tn;موش قوي في الماط أما نحب الويب و الديزاين، شنوة يناسبني؟;"هاد ماتبغاك تعرف إنك مهتم بالبرمجة والتصميم، فهاد الاقسام اللي يناسبك:
+
+- [IIT] Cycle préparatoire intégré (prepa, 2 ans): كاين حاجة يمنعك من تدخله لو كانو قبول، و هاد يساعدك تعرفين ما تفضل تخصصك النهائي.
+
+- [IIT] Licence en informatique (licence, 3 ans): هاد اللي يركز على البرمجة والتصميم، و هاد يساعدك تعرفين ما تفضل تخصصك النهائي لو كنتي فاهمين تستمرين في الدراسة.
+
+اختار ما يناسبك و استفسر عن التسجيل من المكتب المختص.";;;
+Q23;tn;الليسانس قداش من عام و نجم نكمل بعدها إنجنيور؟;هيك، الليسانس من 3 سنوات و بعدها إنجينيور من 3 سنوات أيضًا. كيف ممكن نعرف ما هي preferences الخاصة بك في المدارس؟;;;
+Q24;tn;IIT ولا ISB خير باش نخدم في الداتا؟;Chnowa, en quoi puis-je t'aider pour le domaine de l'IA/Data Science à l'IIT ou l'ISB ?;;;
+Q25;arabizi;chnowa el far9 bin el prepa w el licence fel IIT ?;;;;
+Q26;arabizi;chnowa lezmni bech na9ra ingénieur ?;Chnowa, ouf ! Ta question est claire. Quels sont tes sujets préférés au lycée ?;;;
+Q27;arabizi;9adeh ykhalles el wa7ed fel 3am fel licence ?;Chnowa, wakht 3alek ma 3alak el 3am li ydooma fel licence fi IIT? Li haddi 3am el 3alek yman fi 3am el prepa ya 3alek?;;;
+Q28;arabizi;3andi bac math w n7eb el programmation barcha, chnowa tnasa7ni ?;Chnowa, tana7ni prépa informatique tna3t tna7en kherb tafsiir el programmation. Wad3a tna7en 3aych el licence informatique tna7en 3aych el cycle ingénieur Génie Informatique.;;;
+Q29;arabizi;ki nkammel ingénieur info win najjem nekhdem ?;Chnowa, khoumama kammel ingénieur en informatique à l'IIT? 3la 3la 3lech section du bacc et 3la matières préférées?;;;
+Q30;arabizi;n7eb na3mel préinscription, kifech ?;Chnowa, n7eb na3mel préinscription. Fajr t3l3m m3a site officiel d'IIT ou d'ISB. 3la 3la, 3lwem t3l3m 3la 3la 3la.;;;
+Q31;arabizi;najjem nekhou rendez-vous lel entretien jem3a jeya ?;Chnowa, j'apprécierais de mieux comprendre ton contexte. Quel est ton niveau scolaire actuel ? Quelle section du baccalauréat as-tu suivi ? Quelles matières préfères as-t-tu choisies ? Quel objectif professionnel as-t-tu en tête ? Et quelles sont tes contraintes ?;;;
+Q32;arabizi;3aslema, labes ?;Chnowa, 3aslema ! Mo touji na3em ? Tu es d'ou ?;;;
+Q33;arabizi;chkoun reb7 el match lbare7 ?;Chnowa, chowm3 el match l3shan? 3ala ma3el fiq 3la el section du bac, el matières chna3a, wa7ed el objectif fiq 3la el baccara, wa7ed el contrainta fiq 3la el baccara?;;;
+Q34;arabizi;mouch 9wi fel math ama n7eb el web wel design, chnowa ynesbni ?;Chnowa, ta section de math ou web design préfère ? Et quel est ton objectif professionnel ?;;;
+Q35;arabizi;el licence 9adeh men 3am w najjem nkammel ba3dha ingénieur ?;Chnowa, t'as pensé en faire un ingénieur informatique avec ta licence en informatique. Quels sont tes intérêts en mathématiques et programmation ?;;;
+Q36;arabizi;IIT walla ISB khir bech nekhdem fel data ?;Chnowa, data chnowa, IIT wa ISB khilgha bnafech. Data chnowa, IIT wa ISB khilgha bnafech. IIT wa ISB khilgha bnafech. IIT wa ISB khilgha bnafech. IIT wa ISB khilgha bnafech.;;;
+Q37;fr;slt c quoi exactement la licence big data a liit ?? on fait bcp de maths ?;Salut chnowa, la Licence en Informatique à l'IIT couvre bien des sujets de mathématiques. Pour la spécialité Big Data, tu devras probablement faire plus de travaux en statistiques, en programmation et en analyse de données. Tu auras aussi des cours sur les bases de données et les outils de traitement de grands volumes de données. Tu es prêt à te plonger dans ces sujets ?;;;
+Q38;fr;jai un bac eco gestion est ce que je peux m'inscrire en licence info ou c réservé aux bac math;Salut chnowa ! Ton bac en gestion ne te réservait pas spécifiquement la licence en informatique. Tu peux certainement t'inscrire en licence en informatique à l'IIT. Tu peux aussi envisager la prépa informatique qui te permettrait de te préparer à cette licence. Quels sont tes intérêts en matière de mathématiques et de programmation ?;;;
+Q39;fr;combien ca coute par an la prepa integree svp, et yaura des frais d'inscription en plus ?;Les frais de scolarité pour la prépa intégrée à l'IIT sont actuellement offerts sans frais. Il n'y a pas de frais d'inscription supplémentaire. Pour avoir les informations les plus à jour, je te conseille de contacter directement le service des admissions de l'IIT.;;;
+Q40;fr;genie civil ou genie meca, lequel a le plus de debouchés en tunisie et a l'etranger ?;"Pour choisir entre génie civil et génie mécanique, il est important de considérer plusieurs facteurs comme les débouchés professionnels, les compétences requises et votre intérêt personnel. 
+
+Génie civil offre de nombreux débouchés en Tunisie et à l'étranger, notamment dans les domaines de la construction, des infrastructures, des travaux publics, et des projets de développement durable. Les métiers liés à la gestion des projets, à la conception et à la supervision de travaux sont largement demandés.
+
+Génie mécanique, quant à lui, est également très demandé, surtout dans les secteurs de l'industrie, de l'ingénierie des fluides, de l'ingénierie thermique, et des systèmes de production. Il offre également de nombreuses opportunités dans les domaines de la recherche et de l'innovation.
+
+Je te suggère de consulter les offres d'emploi récentes et les opportunités de recherche dans ces domaines pour mieux comprendre les débouchés.";;;
+Q41;fr;j'ai eu 12.5 au bac sciences, j'aime la bio et l'informatique, vous me conseillez quoi ?;;;;
+Q42;fr;comment faire la preinscription en ligne ? faut deposer quels papiers ?;Pour la préinscription en ligne à l'IIT, tu dois généralement déposer tes documents officiels comme ton passeport, ta copie de ton BAC, ta copie de ta carte de résident, et peut-être une attestation de taux d'inscription. Tu devras aussi remplir un formulaire en ligne avec des informations personnelles. Pour plus de précisions, je te conseille de consulter le site officiel de l'IIT ou de contacter leur service des admissions.;;;
+Q43;fr;est ce que je peux decaler mon entretien de jeudi à la semaine prochaine ?;chnowa, je peux changer ton entretien pour la semaine prochaine. 3lech, veux-tu préciser ton niveau, tes sections de bac, tes matières préférées, tes objectifs professionnels et tes contraintes ?;;;
+Q44;fr;bonsoir, merci pour les infos !;Chnowa, bonsoir ! Je suis content d'être là pour t'aider. Raconte-moi un peu ton parcours scolaire, tes matières préférées et tes objectifs professionnels.;;;
+Q45;fr;tu connais un bon resto pas cher a sfax centre ?;"Chnowa, il y a un restaurant près de la gare centrale qui fait des plats délicieux et pas chers. Tu peux essayer le ""Ramen Express"". 3lech tu sais où c'est ?";;;
+Q46;fr;les cours en licence cybersécurité c en francais ou en anglais ? y a des stages ?;;;;
+Q47;tn;شنوة نقراو في licence réseaux et cybersécurité ؟;شنه يا، انا ممكن اساعدك في الاختيار. انت بتفضل تعرف عن الاختيارات دي؟ لازم اعرف انت بتاع ما بتعرفش. انت بتاع ما بتعرفش ما هي الاختيارات دي، انت بتاع ما بتعرفش ما هي الاختيارات دي، ما هي الاختيارات دي اللي بتقدمها IIT؟;;;
+Q48;tn;عندي باك تقني، نجم ندخل للبريبا ولا لازمني باك رياضيات ؟;3lech ta3dom 3la prepa ou l'ingenieur ? 3alam 3la 3le3k n3dama.;;;
+Q49;tn;قداش المعاليم متاع الهندسة في العام ؟ وفما تخفيض ؟;الFORMATION المتاحة في IIT هي Cycle Ingénieur en Génie Informatique، وهو يدوي لمدة 3 سنوات. لا يوجد أي رسوم تتعلق بالسcolarité في هذا السياق.;;;
+Q50;tn;شنية خير، نقرا licence ولا نعدي البريبا و ندخل الهندسة ؟;3lech tafkid, n3achna 3la licence ou 3la prépa wa 3la ingénieur? 3lwam n3awj tayyib wa n3awj tayyib.;;;
+Q51;tn;نحب البرمجة برشا اما ضعيف شوية في الماط، شنوة تنصحني نختار ؟;3lech chnowa, ma 3la 3la prepa ou licence en informatique 3lan? Chwooua 3la licence, 3la t3awekel fi 3lan 3lan 3lan 3lan?;;;
+Q52;tn;كيفاش نعمل التسجيل الأولي ؟ لازم نجي للمدرسة ولا أونلاين ؟;هاد التسجيل الأولي ممكن يكون عبر الإنترنت فقط، خاصة في هذه الظروف. ممكن نبدأ بزيارة الموقع الإلكتروني للIIT ونبحث عن صفحة تسجيل أولي. إذا كان التسجيل عبر الإنترنت متاح، فعليك تعبئة البيانات المطلوبة وتقديم الوثائق المطلوبة عبر الإنترنت. إذا كان التسجيل يحتاج إلى زيارة مدرسة، فسيكون هناك تعليمات محددة لذلك.;;;
+Q53;tn;نحب ناخذ rendez-vous باش نحكي مع مسؤول، وقتاش فما بلايص ؟;چند دقاه؟ ممكن تانية، مابالى يبص.;;;
+Q54;tn;عسلامة، يعطيك الصحة على المساعدة;سلاماً! كيف يمكنني مساعدتك اليوم؟;;;
+Q55;tn;شكون ربح الماتش متاع البارح ؟;شكون مابدك تعرفش؟ المباريات كلها معلنة رسميًا على الموقع الرسمي للنادي.;;;
+Q56;tn;الفرق بين génie informatique و licence génie logiciel شنوة ؟;;;;
+Q57;arabizi;chnowa el modules fi licence big data ? fama deep learning ?;Chnowa, les modules de licence en informatique couvrent une variété de sujets, y compris les technologies de data science comme le deep learning et le big data. Tu peux envisager de mélanger ces sujets dans ta formation. Pour mieux comprendre, propose-moi plus de détails sur ta situation : ta section du bac, tes matières préférées, ton objectif professionnel et tes contraintes ?;;;
+Q58;arabizi;3andi bac eco, najem nod5el licence info wala le ?;Chnowa, t'as une section en économie au bac ? Tu penses aller en licence d'informatique à l'IIT ?;;;
+Q59;arabizi;9adech ta5ou el iit fel 3am lel licence ? w fama facilité de paiement ?;9adech ta5ou el iit fel 3am lel licence? w fama facilité de paiement? 3ila 3el iit, el ijtihada el 3amli fi licence 3an el prepa. Lahel, fama facilité de paiement.;;;
+Q60;arabizi;prepa wala licence directement, chnowa a7sen lel 5edma ba3d ?;Chnowa, pour passer directement d'un baccalauréat à une licence peut être possible, mais il dépend des résultats et des critères spécifiques de l'IIT. Tu pourrais envisager de faire une préparation en 1ère année (prepa) pour te préparer et améliorer tes chances. Comment sont tes résultats en terminale ?;;;
+Q61;arabizi;ena n7eb el electronique w el robots, chnowa el formation eli tsla7li ?;Chnowa, t'as choix entre la prépa informatique ou la licence informatique pour suivre des études en électronique et en robots. Tu préfères telle formation ?;;;
+Q62;arabizi;kifech na3mel inscription ? chnowa el wra9 eli lazmin ?;Chnowa, m'assure que pour te guider mieux, peux-tu dire ta section du bac, tes matières préférées et ton objectif professionnel ?;;;
+Q63;arabizi;n7eb n2a5er rdv mte3i, mane9derch nji nhar el 5mis;Chnowa, m'drwa. Man ne7derch nji nhar el 5mis? 3la 3la nji nhar el 5mis wa7ed bi 3la 3la nji nhar el 5mis?;;;
+Q64;arabizi;aslema, ya3tik sa7a 3al ma3loumet;3al ma3loumet, aslema. Ma3loumoun fi 3awj? N'est-ce pas pour choisir entre une prépa, une licence ou un cycle ingénieur en informatique à l'IIT?;;;
+Q65;arabizi;chkoun ya3ref ki tet7al el plage fi sfax ?;Chnowa, ya3ref el plage fi sfax t3lak 3la m'da 3lech el 3lech el 7edda. Ya3ref el plage t3lak 3la el 3lech el 7edda el 7edda, el 7edda el 3lech el 7edda, el 7edda el 3lech el 7edda. Ya3ref el plage t3lak 3la el 3lech el 7edda el 7edda, el 7edda el 3lech el 7edda, el 7edda el 3lech el 7edda.;;;
+Q66;arabizi;jebt 11 fel bac math, mch metfahem ken najem na3mel genie wala le, chnowa ra2yek ?;Chnowa, tekt lekem tafawet na3mel ingénieur. Math m3ah, metfahem ken najem na3mel ingénieur. Teket lekem tafawet na3mel prépa. Math, mch metfahem, ken najem na3mel ingénieur. Teket lekem tafawet na3mel licence.;;;
