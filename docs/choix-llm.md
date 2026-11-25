@@ -12,15 +12,17 @@ SmartCampus AI doit comprendre et répondre à des futurs étudiants tunisiens :
 - avec une latence acceptable pour un chat (objectif : moins de [ ] secondes en moyenne) ;
 - avec un modèle **open-source** adaptable par LoRA/QLoRA (exigence du sujet).
 
-Contraintes matérielles de l'équipe : [GPU disponible ? RAM des machines ? Colab ?]
+Contraintes matérielles de l'équipe : PC portable i7, 16 Go RAM, RTX 3050 4 Go ; dans Docker, Ollama tourne
+sur le CPU seul (GPU non utilisé). Kaggle / Colab (GPU T4 16 Go) pour les modèles 7–12B.
 
 ## 2. Modèles évalués
 
-| Modèle | Taille | Licence | Accès (Ollama / API) | Pourquoi |
-|---|---|---|---|---|
-| [ ] | [ ] | [ ] | [ ] | [ ] |
-| [ ] | | | | |
-| [ ] | | | | |
+| Modèle | Taille | Licence | Accès (Ollama / API) | Pourquoi | État |
+|---|---|---|---|---|---|
+| `qwen2.5:3b` | 3,1 B (Q4_K_M) | Qwen Research License | Ollama local | modèle par défaut du chat, multilingue dont l'arabe | ✅ évalué (poste local) |
+| `gemma2:2b` | 2,6 B (Q4_0) | Gemma Terms of Use | Ollama local | plus petit candidat, le plus léger sur CPU | ⏳ à évaluer (poste local) |
+| `llama3.2:3b` | 3,2 B | Llama 3.2 Community License | Ollama local | référence Meta de même taille | ⏳ à évaluer (poste local) |
+| modèles 7–12B | | | Kaggle T4 (`llm-eval/kaggle_colab_eval.ipynb`) | candidats principaux | ⏳ à évaluer |
 
 ## 3. Protocole
 
@@ -39,9 +41,9 @@ Contraintes matérielles de l'équipe : [GPU disponible ? RAM des machines ? Col
 
 ## 4. Résultats
 
-### 4.0 Mesure préliminaire sur poste local (18/11/2026)
+### 4.0 Mesure préliminaire sur poste local
 
-Seule mesure réelle à ce jour. Ce n'est **pas** le banc complet : elle sert à choisir la machine d'évaluation.
+Premiers essais à la main, avant le banc complet : ils servent à choisir la machine d'évaluation.
 
 | Machine | Modèle | Exécution | Question | Latence | Langue de la réponse |
 |---|---|---|---|---|---|
@@ -53,7 +55,28 @@ Conclusion : un modèle 3B répond en quelques secondes sur ce poste (utilisable
 mais la qualité en Arabizi et l'exactitude sont insuffisantes sur ces deux exemples. Les modèles 7–9B sont évalués
 sur un GPU T4 Kaggle avec `llm-eval/kaggle_colab_eval.ipynb`.
 
-### 4.1 Banc complet (à remplir après l'exécution Kaggle)
+### 4.1 Banc complet sur poste local (modèles ≤ 3B)
+
+Machine : PC portable i7, 16 Go RAM, CPU seul (Ollama dans Docker, 7,6 Go alloués, d'autres conteneurs actifs).
+66 questions (22 FR, 22 tunisien, 22 Arabizi). Résultats bruts : `llm-eval/results/summary.md` et `*.jsonl`.
+
+| model | score | intent_acc | intent_fr | intent_tn | intent_arabizi | langid_acc | lang_consistency | lang_exact | fee_hallucination | latency_mean_s | latency_p95_s | errors |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `qwen2.5:3b` | 59.3 | 66.7 | 81.8 | 68.2 | 50.0 | 21.2 | 71.2 | 42.4 | 0.0 | 20.56 | 180.0 | 5 |
+| `gemma2:2b` | ⏳ | | | | | | | | | | | |
+| `llama3.2:3b` | ⏳ | | | | | | | | | | | |
+
+Métriques en %, latences en secondes. Lecture pour `qwen2.5:3b` :
+- **5 appels échoués sur 66** (4 dépassements du délai de 180 s, 1 erreur 500 d'Ollama), comptés comme faux et à
+  180 s : ils tirent la latence moyenne et le p95 vers le haut. Sur les 61 réponses obtenues : latence moyenne
+  **7,5 s**, médiane **4,5 s**. Cause probable : machine chargée (CPU seul, autres conteneurs actifs).
+- **Arabizi à 50 %** de compréhension : sous le seuil de 60 % fixé au §3 ; le modèle ne peut pas être retenu tel quel.
+- **Identification de la langue faible (21,2 %)** : le modèle confond souvent tunisien, Arabizi et français.
+- **Aucun montant de frais inventé** (0 %) avec le contexte fourni.
+
+Les latences de ce tableau ne se comparent pas à celles de Kaggle (machine différente).
+
+### 4.2 Banc Kaggle (modèles 7–12B, à remplir après l'exécution)
 
 Machine : [GPU]. Coller ici `llm-eval/results/summary.md` :
 
