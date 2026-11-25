@@ -1,0 +1,17 @@
+{
+ "model": "qwen2.5:3b",
+ "intent_acc": 66.7,
+ "intent_fr": 81.8,
+ "intent_tn": 68.2,
+ "intent_arabizi": 50.0,
+ "langid_acc": 21.2,
+ "lang_consistency": 71.2,
+ "lang_exact": 42.4,
+ "errors": 5,
+ "fee_hallucination": 0.0,
+ "latency_mean_s": 20.56,
+ "latency_p95_s": 180.0,
+ "score": 59.3,
+ "machine": "PC portable i7, 16 Go RAM, CPU seul (Ollama Docker)",
+ "questions": 66
+}
